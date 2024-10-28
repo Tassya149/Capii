@@ -130,14 +130,15 @@
         <button id="start-button">Watch till the end!</button>
     </div>
     <div class="balloon"></div>
-    <div class="balloon"></div>
-    <div class="balloon"></div>
-    <div class="balloon"></div>
-    <div class="balloon"></div>
-    <div class="gift-container" id="gift-container">
+".repeat(27) + "
+$1 id="gift-container">
         <div class="gift"></div>
     </div>
-    <div id="cat-message" class="cat-message">Happy Birthday ko CapCap! Here is something for you!</div>
+    <div id="cat-message-container">
+" +
+                     "    " + "<div class="cat-message">Happy Birthday ko CapCap! Here is something for you!</div>
+".repeat(13) +
+                     "</div>
     <div id="video-container">
         <iframe id="first-video" width="560" height="315" src="https://drive.google.com/file/d/1xJCTbAcyfFH6NvkL3RXyDCnwbPztLGGI/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -153,9 +154,9 @@
                 // Simulate the gift opening
                 setTimeout(function() {
                     document.getElementById('gift-container').style.display = 'none';
-                    document.getElementById('cat-message').style.display = 'block';
+                    document.querySelectorAll('.cat-message').forEach(cat => { cat.style.display = 'block'; });
                     setTimeout(function() {
-                        document.getElementById('cat-message').style.display = 'none';
+                        document.querySelectorAll('.cat-message').forEach(cat => { cat.style.display = 'none'; });
                         document.getElementById('video-container').style.display = 'block';
                         document.getElementById('birthday-audio').pause();
                     }, 3000);
