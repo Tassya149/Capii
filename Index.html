@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Surprise!</title>
+    <style>
+        body {
+            background-color: #fffa65; /* Neon yellow */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            font-size: 4em;
+            margin-top: 20vh;
+            color: #ffae00; /* A darker yellow for contrast */
+        }
+        #button-container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: #ffae00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff8700;
+        }
+        #video-container {
+            display: none;
+            margin-top: 30px;
+        }
+        #final-image {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <audio id="birthday-audio" autoplay>
+        <source src="https://example.com/happy-birthday-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    <h1>Happy Birthday!</h1>
+    <div id="button-container">
+        <button id="start-button">Watch till the end!</button>
+    </div>
+    <div id="video-container">
+        <iframe id="rickroll-video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div id="final-image">
+        <img src="https://example.com/your-image.jpg" alt="A beautiful picture to end!" width="400">
+    </div>
+
+    <script>
+        document.getElementById('start-button').addEventListener('click', function() {
+            // Hide the button
+            document.getElementById('button-container').style.display = 'none';
+            // Display the Rickroll video
+            document.getElementById('video-container').style.display = 'block';
+            // Stop the birthday song
+            document.getElementById('birthday-audio').pause();
+
+            // Set a timer to show the final image after 3 minutes (or when the video ends)
+            setTimeout(function() {
+                document.getElementById('video-container').style.display = 'none';
+                document.getElementById('final-image').style.display = 'block';
+            }, 180000); // 3 minutes = 180000 ms
+        });
+    </script>
+</body>
+</html>
